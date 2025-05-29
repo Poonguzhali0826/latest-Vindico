@@ -1,74 +1,27 @@
 import React, { useState } from "react";
 import { ArrowLeft, Plus, Search, Eye, Trash, Heart } from "lucide-react";
-import { ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/router';
 import ProjectModal from '../../components/ModalPopup/ProjectModal';
 import ArchitecturePortfolio from "../projects/architecture-portfolio";
-import ListView from "../projects/list-view";
+
 
 
 
 const ManageImages = () => {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState("all");
-    // const [projects, setProjects] = useState(allImages);
+   
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages] = useState(10);
     const itemsPerPage = 10;
     const [modalOpen, setModalOpen] = useState(false);
-
-    // const toggleFavorite = (id) => {
-    //     setProjects(projects.map(project =>
-    //         project.id === id ? { ...project, isFavorite: !project.isFavorite } : project
-    //     ));
-    // };
-
-    // const displayedProjects = activeTab === "all"
-    //     ? projects
-    //     : projects.filter(project => project.isFavorite);
+    const [modalTitle, setModalTitle] = useState("New Project");
+    
     const [showAllImages, setShowAllImages] = useState(true);
 
     return (
         <div className="text-white ">
-            {/* Header */}
-            {/* <header className="border-b border-gray-800">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                        <img
-                            src="/assets/images/vindico-logo.png"
-                            alt="Logo"
-                            className="h-[40px] w-[70px]"
-                        />
-                        <button className="p-2">
-                            <span className="sr-only">Menu</span>
-                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1H17M1 7H17M1 13H17" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div className="flex items-center pr-2 gap-2">
-                        <div className="flex items-center pr-2 gap-2">
-                            <div
-                                role="button"
-                                tabIndex={0}
-                                className="w-8 h-8 bg-orange-300 rounded-full overflow-hidden cursor-pointer"
-                                
-                            >
-                                <img
-                                    src="https://randomuser.me/api/portraits/women/44.jpg"
-                                    alt="User Avatar"
-                                    className="w-full h-full object-cover" 
-                                />
-                            </div>
-
-                            <ChevronDown
-                                size={16}
-                                className="text-gray-400 cursor-pointer"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </header> */}
+            
 
             {/* Main content */}
             <div className="mx-2">
@@ -121,7 +74,7 @@ const ManageImages = () => {
                                 All Images
                             </button>
                             <button
-                                onClick={() => setActiveTab("SavedImage")}
+                                onClick={() => router.push('/managements/saved-images')}
                                 className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${activeTab === "SavedImage"
                                     ? "bg-[#3A4048] text-white"
                                     : "text-gray-400 hover:text-white"
@@ -150,6 +103,7 @@ const ManageImages = () => {
                         <ProjectModal
                             open={modalOpen}
                             onOpenChange={(isOpen) => setModalOpen(isOpen)}
+                            title={modalTitle}
                         />
                         <div className="w-full sm:w-auto" onClick={() => { setModalOpen(true) }}>
                             <button className="bg-[#768FB5] text-white w-full sm:w-auto px-4 py-2 rounded-md text-sm flex justify-center sm:justify-start items-center gap-2">
@@ -161,15 +115,11 @@ const ManageImages = () => {
                     </div>
 
                     <div className="flex flex-col bg-[#25272c]  rounded overflow-hidden" style={{ height: '630px' }}>
-                        {showAllImages ? (
+                        {showAllImages && (
                            <div className="h-[630px] overflow-y-auto flex-grow scrollbar-custom">
                                    <ArchitecturePortfolio />
                                 </div>
-                        ) : (
-                                <div className="h-[630px] overflow-y-auto flex-grow scrollbar-custom">
-                                     {/* <ListView /> */}
-                                </div>
-                        )}
+                        ) }
 
 
                         {/* Pagination with top border */}

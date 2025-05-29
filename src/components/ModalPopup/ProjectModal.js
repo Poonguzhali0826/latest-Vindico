@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Search } from 'lucide-react';
 
-export default function ProjectModal({ open, onOpenChange }) {
+export default function ProjectModal({ open, onOpenChange,title }) {
   if (!open) return null;
   const steps = [
     { step: '1', label: 'MEP Documents' },
@@ -24,7 +24,7 @@ export default function ProjectModal({ open, onOpenChange }) {
 
         {/* Header */}
         <div className="flex justify-between items-center mb-2 gap-4">
-          <h2 className="text-xl font-normal">New Project</h2>
+          <h2 className="text-xl font-normal">{title}</h2>
           <X className="h-6 w-6 cursor-pointer" onClick={() => {onOpenChange(false)}} />
         </div>
         <p className="text-gray-400 text-sm mb-4">Figma ipsum component variant main layer. Text.</p>

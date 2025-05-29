@@ -25,6 +25,7 @@ const AIFeatureCard = ({ title, description, imagePath, onClick  }) => {
 const AIFeatures = () => {
    const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("New Project");
   const features = [
     {
       title: 'VindicoAI Chatbot',
@@ -67,6 +68,7 @@ const AIFeatures = () => {
       <ProjectModal 
         open={modalOpen}
         onOpenChange={setModalOpen}
+        title={modalTitle}
       />
     </div>
   );

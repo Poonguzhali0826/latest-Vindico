@@ -127,7 +127,7 @@ const Sidebar = () => {
                   </div>
                 </div>
                 <div className="flex mt-1">
-                  <div className="flex -space-x-2">
+                  <div className="flex space-x-2">
                     {chat.avatars.map((avatar, i) => (
                       <img
                         key={i}
@@ -137,6 +137,7 @@ const Sidebar = () => {
                       />
                     ))}
                   </div>
+ 
                 </div>
               </div>
             </React.Fragment>

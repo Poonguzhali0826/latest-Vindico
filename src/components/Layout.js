@@ -20,7 +20,7 @@ const Layout = () => {
         </div>
  
         {/* Main Content */}
-        <div className="flex-1 h-[964px] rounded-[24px] border border-[#2C2F34] p-[24px] overflow-y-auto">
+        <div className="flex-1 h-[964px] rounded-[24px] border border-[#2C2F34] p-[24px] overflow-y-auto bg-[radial-gradient(circle_at_top,rgba(0,174,217,0.5)_0%,#25272c_20%)] ">
           <MainContent />
         </div>
  

@@ -1,20 +1,18 @@
 import React from 'react';
 import { Plus } from 'lucide-react';
 import { useRouter } from 'next/router';
-const ProjectCard = ({ 
-  imagePath, 
-//   designReview = false 
-}) => {
+
+const ProjectCard = ({ imagePath, onClick }) => {
   return (
-    <div className="project-card aspect-square">
+    <div 
+      className="project-card aspect-square hover:opacity-80 transition"
+      onClick={onClick}
+    >
       <img 
         src={imagePath} 
         alt="Project" 
         className="w-full h-full object-cover"
       />
-      {/* {designReview && (
-        <div className="design-review-badge">Design Review</div>
-      )} */}
     </div>
   );
 };
@@ -33,22 +31,10 @@ const EmptyProjectCard = () => {
 const Projects = () => {
   const router = useRouter();
   const projects = [
-    {
-      imagePath: '/assets/images/projectOneImg.png',
-    //   designReview: true
-    },
-    {
-      imagePath: '/assets/images/projectTwoImage.png',
-    //   designReview: true
-    },
-    {
-      imagePath: '/assets/images/projectThreeImage.png',
-    //   designReview: true
-    },
-    {
-      imagePath: '/assets/images/projecFourImage.png',
-    //   designReview: true
-    }
+    { imagePath: '/assets/images/projectOneImg.png' },
+    { imagePath: '/assets/images/projectTwoImage.png' },
+    { imagePath: '/assets/images/projectThreeImage.png' },
+    { imagePath: '/assets/images/projecFourImage.png' }
   ];
 
   return (
@@ -69,11 +55,16 @@ const Projects = () => {
           <ProjectCard
             key={index}
             imagePath={project.imagePath}
-            // designReview={project.designReview}
+            onClick={
+              index === 0
+                ? () => router.push('/autocadd/autoCaddLayout')
+                : undefined
+            }
           />
         ))}
       </div>
     </div>
   );
 };
+
 export default Projects;

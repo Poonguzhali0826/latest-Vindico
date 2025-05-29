@@ -145,10 +145,21 @@ const ManagementView = () => {
     const itemsPerPage = 10;
     const [modalOpen, setModalOpen] = useState(false);
     const [drawerModalOpen, setDrawerModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState("");
     const displayedProjects = activeTab === "all"
         ? projects
         : projects.filter(project => project.isKnowledgeData);
     const [showManageImages, setShowManageImages] = useState(false);
+    const openModal = () => {
+        if (activeTab === "all") {
+            setModalTitle("New Project");
+        } else if (activeTab === "baseData") {
+            setModalTitle("New Base Data");
+        } else {
+            setModalTitle("New Project"); // fallback
+        }
+        setModalOpen(true);
+    };
     return (
         <div className="min-h-screen text-white bg-[radial-gradient(circle_at_top,rgba(0,174,217,0.5)_0%,rgba(15,18,23,0)_25%)] ">
             {/* Header */}
@@ -159,6 +170,7 @@ const ManagementView = () => {
                             src="/assets/images/vindico-logo.png"
                             alt="Logo"
                             className="h-[40px] w-[70px]"
+                            onClick={() => router.push('/')}
                         />
                         <button className="p-2">
                             <span className="sr-only">Menu</span>
@@ -259,8 +271,9 @@ const ManagementView = () => {
                                 <ProjectModal
                                     open={modalOpen}
                                     onOpenChange={(isOpen) => setModalOpen(isOpen)}
+                                    title={modalTitle}
                                 />
-                                <div className="w-full sm:w-auto" onClick={() => { setModalOpen(true) }}>
+                                <div className="w-full sm:w-auto" onClick={openModal}>
                                     <button className="bg-[#768FB5] text-white w-full sm:w-auto px-4 py-2 rounded-md text-sm flex justify-center sm:justify-start items-center gap-2">
                                         <Plus size={18} />
                                         <span>Add New</span>

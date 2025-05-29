@@ -1,17 +1,20 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 const Header = () => {
 const router = useRouter();
 return (
     <header className='bg-[radial-gradient(circle_at_top,rgba(0,174,217,0.5)_0%,#25272c_25%)] '>
         <div className="flex items-center justify-between p-1.5">
               <div className="flex items-center">
-                  <img
-                      src="/assets/images/vindico-logo.png"
-                      alt="Logo"
-                      className="h-[40px] w-[70px]"
-                  />
+                  <Link href="/" className="">
+                    <img
+                        src="/assets/images/vindico-logo.png"
+                        alt="Logo"
+                        className="h-[40px] w-[70px]"
+                    />
+                </Link>
                   <button className="p-2">
                       <span className="sr-only">Menu</span>
                       <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">

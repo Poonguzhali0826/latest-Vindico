@@ -1,12 +1,14 @@
 import { Button } from "../../components/ui/button";
+import { useRouter } from "next/router";
 
 const AutoCaddTopBar = () => {
+      const router = useRouter();
     return (
-        <div className="flex items-center justify-between h-[54px] px-2 sm:px-4 border-b border-gray-800 bg-[#0D1217]">
+        <div className="flex items-center justify-between h-[54px] px-2 sm:px-4 border-b border-gray-800 ">
             {/* Left section */}
             <div className="flex items-center gap-1 sm:gap-2">
                 {/* Logo */}
-                <div className="w-[52px] h-[54px] flex items-center justify-center">
+                <div className="w-[52px] h-[54px] flex items-center justify-center"onClick={() => router.push('/')}>
                     <img
                         src="/assets/images/vindico.png"
                         alt="Logo"
@@ -15,7 +17,7 @@ const AutoCaddTopBar = () => {
                 </div>
 
                 {/* Back to Home */}
-                <span className="text-sm text-white opacity-60 hover:opacity-100 cursor-pointer">
+                <span className="text-sm text-white opacity-60 hover:opacity-100 cursor-pointer "onClick={() => router.push('/')}>
                     Back to Home
                 </span>
 
@@ -46,7 +48,7 @@ const AutoCaddTopBar = () => {
   {/* Management Button */}
   <Button
     variant="ghost"
-    className="bg-[#1E2124] hover:bg-[#25282C] text-gray-300 rounded-lg px-3 py-2 h-8 flex items-center gap-2"
+    className="bg-[#1E2124] hover:bg-[#25282C] text-gray-300 rounded-lg px-3 py-2 h-8 flex items-center gap-2"onClick={() => router.push('/managements')}
   >
     <img src="/assets/images/settings-image.png" alt="Management icon" className="w-4 h-4" />
     <span className="text-sm">Management</span>
