@@ -67,30 +67,6 @@ const Index = () => {
               <RecentProjects title="What you've been working on" />
             </div>
           )}
-          {/* {showGenerator ? (
-            <ImageGenerator
-              onGoBack={handleGoBack}
-              prompt="create a image of house vitrine modern predio"
-            />
-          ) : (
-            <div>
-              <h1 className="text-2xl md:text-3xl font-medium mb-6 leading-snug">
-                What can <span className="font-bold">I help you</span> to design?
-              </h1>
-
-              <CategoryBar />
-
-              <ExampleImages />
-
-              <div className="mb-4">
-                <button className="text-sm text-[#4EABD5] cursor-pointer">
-                  View More
-                </button>
-              </div>
-
-              <RecentProjects title="What you've been working on" />
-            </div>
-          )} */}
 
         </div>
       </div>

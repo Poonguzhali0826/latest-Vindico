@@ -88,13 +88,6 @@ const EditImages = ({ onReturn }) => {
 
 
                 {isEraseMode && !treeRemoved && (
-                    // <div className="absolute top-[22%] left-[40%] md:top-[26%] md:left-[28%] z-20 pointer-events-none">
-                    //     <img
-                    //         src="/assets/images/tree-mask.png"
-                    //         alt="Tree Overlay"
-                    //         className="w-[35vw] max-w-[410px] h-auto object-contain"
-                    //     />
-                    // </div>
                     <div className="absolute top-[213px] left-[756px] z-20 pointer-events-none">
                         <img
                             src="/assets/images/tree-mask.png" // transparent red overlay of tree

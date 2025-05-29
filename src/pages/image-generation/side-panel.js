@@ -80,58 +80,6 @@ const SidePanel = ({ isGenerateActive, onGenerate }) => {
             </div>
           ))}
         </div>
-               
-        {/* <label className="block text-sm text-white mb-2">Style</label>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-          
-          <div className="flex flex-col items-center space-y-1">
-            <div className="rounded-[12px] overflow-hidden h-[48px] w-[48px] bg-gray-700">
-              <img
-                src="assets/images/example-image-1.png"
-                alt="Classic"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-xs text-aiui-blue">Classic</span>
-          </div>
-
-          
-          <div className="flex flex-col items-center space-y-1">
-            <div className="rounded-[16px] overflow-hidden h-[56px] w-[56px] bg-gray-700">
-              <img
-                src="assets/images/example-image-1.png"
-                alt="Contemporary"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-xs text-gray-400">Contemporary</span>
-          </div>
-
-         
-          <div className="flex flex-col items-center space-y-1">
-            <div className="rounded-[16px] overflow-hidden h-[56px] w-[56px] bg-gray-700">
-              <img
-                src="assets/images/example-image-1.png"
-                alt="Modern"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-xs text-gray-400">Modern</span>
-          </div>
-
-          
-          <div className="flex flex-col items-center space-y-1">
-            <div className="rounded-[16px] overflow-hidden h-[56px] w-[56px] bg-gray-700">
-              <img
-                src="assets/images/example-image-1.png"
-                alt="Customize"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-xs text-gray-400">Customize</span>
-          </div>
-        </div> */}
       </div>
 
       
