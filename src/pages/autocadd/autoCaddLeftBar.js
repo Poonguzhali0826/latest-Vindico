@@ -7,8 +7,6 @@ const AutoCaddLeftSidebar = () => {
             className="absolute"
             style={{
                 width: "425px",
-                //  height: "100%",
-                // paddingTop: "5px",
                 top: "150px",
                  bottom: "20px",
                 left: "20px",
