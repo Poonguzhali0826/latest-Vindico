@@ -1,9 +1,6 @@
-/** @type {import('next').NextConfig} */
-require('dotenv').config()
-const webpack = require('webpack')
-
 const nextConfig = {
   images: {
+    unoptimized: true, // 🔧 disables incompatible image optimization
     domains: [
       "primefaces.org",
       "edbrix.info",
@@ -27,12 +24,8 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.plugins.push(
-      new webpack.EnvironmentPlugin(process.env)
-    )
-    return config
-  }
-}
-module.exports = nextConfig
+    return config;
+  },
+};
 
-
+module.exports = nextConfig;

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { XCircleIcon } from "lucide-react";
-import { HeaderSection } from "../../pages/drawer/sections/header";
 import { Button } from "../ui/button";
  
 const BaseDrawerModel = ({ open, onOpenChange }) => {

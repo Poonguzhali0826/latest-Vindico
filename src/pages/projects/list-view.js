@@ -4,7 +4,8 @@ import { ChevronDown } from 'lucide-react';
 import { useRouter } from 'next/router';
 import ProjectModal from '../../components/ModalPopup/ProjectModal';
 import ArchitecturePortfolio from "./architecture-portfolio";
-
+import Link from 'next/link';
+ 
 // Project data
 const allProjects = [
     {
@@ -123,6 +124,8 @@ const ListView = () => {
     const [totalPages] = useState(10);
     const itemsPerPage = 10;
     const [modalOpen, setModalOpen] = useState(false);
+    const [modalTitle, setModalTitle] = useState("New Project");
+
 
     const toggleFavorite = (id) => {
         setProjects(projects.map(project =>
@@ -141,11 +144,13 @@ const ListView = () => {
             <header className="border-b border-gray-800">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
+                        <Link href="/" >
                         <img
                             src="/assets/images/vindico-logo.png"
                             alt="Logo"
                             className="h-[40px] w-[70px]"
                         />
+                        </Link>
                         <button className="p-2">
                             <span className="sr-only">Menu</span>
                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -257,6 +262,7 @@ const ListView = () => {
                         <ProjectModal
                             open={modalOpen}
                             onOpenChange={(isOpen) => setModalOpen(isOpen)}
+                            title={modalTitle}
                         />
                         <div className="w-full sm:w-auto" onClick={() => { setModalOpen(true) }}>
                             <button className="bg-[#768FB5] text-white w-full sm:w-auto px-4 py-2 rounded-md text-sm flex justify-center sm:justify-start items-center gap-2">

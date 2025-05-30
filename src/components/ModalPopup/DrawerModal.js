@@ -1,5 +1,4 @@
 import { XCircleIcon } from "lucide-react";
-import { HeaderSection } from "../../pages/drawer/sections/header";
 import { Button } from "../ui/button";
 import Image from 'next/image';
  
